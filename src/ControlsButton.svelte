@@ -59,7 +59,7 @@
   }
 
   .btn.shuffle {
-    background: #1db796 url('./shuffle.svg') no-repeat center center;
+    background: #1db796 url('shuffle.svg') no-repeat center center;
     background-size: 80%;
     color: #FFF;
     transition: .3s;

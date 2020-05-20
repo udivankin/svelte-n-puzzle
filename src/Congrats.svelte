@@ -19,7 +19,7 @@
   <div class="congrats-header">
     You did it!
   </div>
-  <audio src="./build/win.ogg" bind:this={audio} />
+  <audio src="build/win.ogg" bind:this={audio} />
   <div class="congrats-controls">
     <a
       href="# "
@@ -38,7 +38,7 @@
   }
 
   .congrats-star {
-    background: url('./star.svg') no-repeat center center;
+    background: url('star.svg') no-repeat center center;
     background-size: contain;
     height: 60vh;
     width: 60vw;
