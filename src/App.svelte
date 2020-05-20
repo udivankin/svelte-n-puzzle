@@ -26,6 +26,7 @@
 	}
 
 	$: isComplete = getIsComlete(tiles);
+	$: document.title = `${tiles[0].length * tiles.length - 1}-puzzle`;
 </script>
 
 <div id="root">
