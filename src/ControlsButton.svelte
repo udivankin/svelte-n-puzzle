@@ -17,8 +17,8 @@
 	class:outline={!shuffle}
 	title={`${direction > 0 ? 'More' : 'Less'} ${updateRows ? 'rows' : 'columns'}`}
 	on:click={() => {
-		const nextRows = shuffle ? rows : Math.max(2, rows + (rows ? direction : 0));
-		const nextCols = shuffle ? cols : Math.max(2, cols + (cols ? direction : 0));
+		const nextRows = shuffle ? rows : Math.max(2, rows + (updateRows ? direction : 0));
+		const nextCols = shuffle ? cols : Math.max(2, cols + (updateCols ? direction : 0));
 		updateState('updateSize', nextRows, nextCols);
 	}}
 >
