@@ -1,4 +1,5 @@
 <script>
+  import { setContext } from 'svelte';
   import Board from "./Board.svelte";
   import Congrats from "./Congrats.svelte";
   import Controls from "./Controls.svelte";
@@ -28,16 +29,18 @@
     }
   };
 
+  setContext('updateState', updateState);
+
   $: isComplete = getIsComlete(tiles);
   $: document.title = `${tiles[0].length * tiles.length - 1}-puzzle`;
 </script>
 
 <main id="root">
   {#if isComplete}
-    <Congrats {tiles} {updateState} />
+    <Congrats {tiles} />
   {:else}
-    <Controls {tiles} {updateState} />
-    <Board {tiles} {updateState} />
+    <Controls {tiles} />
+    <Board {tiles} />
   {/if}
 </main>
 

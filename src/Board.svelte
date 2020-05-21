@@ -1,6 +1,9 @@
 <script>
+  import { getContext } from 'svelte';
+
   export let tiles;
-  export let updateState;
+  
+  let updateState = getContext('updateState');
 
   const getSortedTiles = (tiles) => {
     const sortedTiles = [];

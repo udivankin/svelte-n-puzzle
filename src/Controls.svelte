@@ -1,9 +1,10 @@
 <script>
+  import { getContext } from 'svelte';
   import ControlsButton from './ControlsButton.svelte';
   import { find } from './helpers';
   
   export let tiles;
-  export let updateState;
+  let updateState = getContext('updateState');
 
   $: cols = tiles[0].length;
   $: rows = tiles.length;
@@ -31,16 +32,16 @@
 <div class="controls">
   <div class="rows-controls">
     Rows
-    <ControlsButton {cols} {rows} update={[ 'rows', -1 ]} {updateState} />
-    <ControlsButton {cols} {rows} update={[ 'rows', +1 ]} {updateState} />
+    <ControlsButton {cols} {rows} update={[ 'rows', -1 ]} />
+    <ControlsButton {cols} {rows} update={[ 'rows', +1 ]} />
   </div>
   <div class="cols-controls">
     Columns
-    <ControlsButton {cols} {rows} update={[ 'cols', -1 ]} {updateState} />
-    <ControlsButton {cols} {rows} update={[ 'cols', +1 ]} {updateState} />
+    <ControlsButton {cols} {rows} update={[ 'cols', -1 ]} />
+    <ControlsButton {cols} {rows} update={[ 'cols', +1 ]} />
   </div>
   <div class="aside-controls">
-    <ControlsButton {cols} {rows} shuffle {updateState} />
+    <ControlsButton {cols} {rows} shuffle />
   </div>
 </div>
 

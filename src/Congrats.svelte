@@ -1,9 +1,9 @@
 <script>
-  import { onMount } from 'svelte';
-
-  export let tiles;
-  export let updateState;
+  import { getContext, onMount } from 'svelte';
   
+  export let tiles;
+
+  let updateState = getContext('updateState');
   let audio;
   
   onMount(() => {
