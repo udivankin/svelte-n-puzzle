@@ -45,15 +45,23 @@
     opacity: .6;
   }
 
-  .btn:hover {
-    opacity: 1;
-  }
-
   @media all and (max-width: 768px) {
     .btn {
-      height: 1.5rem;
-      width: 1.5rem;
-      margin-left: .5rem;
+      height: 2rem;
+      width: 2rem;
+      margin-left: .3rem;
+    }
+  }
+
+  @media (pointer: fine) {  
+    .btn:hover {
+      opacity: 1;
+    }
+  }
+
+  @media (pointer: coarse) {
+    .btn:active {
+      opacity: 1;
     }
   }
 </style>

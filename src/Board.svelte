@@ -61,6 +61,10 @@
     padding: 2rem;
   }
 
+  .board .tile {
+    cursor: pointer;
+  }
+
   .board .tile rect {
     fill: #3F51B5;
   }
@@ -80,13 +84,9 @@
   }
 
   @media (pointer: fine) {
-    .board .tile:hover {
-      cursor: pointer;
-    }
-    
     .board .tile:hover rect {
       fill: #475bca;
-    }   
+    }  
   }
 
   @media (pointer: coarse) {
