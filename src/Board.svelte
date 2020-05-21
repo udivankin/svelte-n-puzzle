@@ -26,7 +26,6 @@
     height="100%"
     viewBox={`0 0 ${cols * 24} ${rows * 24}`}
     xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
   >
     {#each sortedTiles as pos, tileName}
       {#if tileName !== 0}
@@ -34,7 +33,7 @@
           class="tile"
           on:click={() => { updateState('move', tileName); }}
           key={tileName} 
-          transform={`translate(${pos[1] * 24 + 1}, ${pos[0] * 24 + 1})`}
+          transform={`translate(${pos[1] * 24}, ${pos[0] * 24})`}
         >
           <rect
             height="22"
@@ -44,9 +43,8 @@
             y="1"
           />
           <text
-            x={12}
-            y={12}
-            alignment-baseline="central"
+            font-size="12"
+            transform={`translate(12, 16)`}
             text-anchor="middle"
           >
             {tileName}
@@ -59,9 +57,8 @@
 
 <style>
   .board-wrapper {
-    height: 100%;
-    width: 100%;
-    padding: 8rem 4rem 4rem;
+    height: calc(100% - 4rem);
+    padding: 2rem;
   }
 
   .board .tile rect {
@@ -70,24 +67,31 @@
 
   .board .tile text {
     fill: #cfd5f7;
-    font-size: .75rem;
   }
 
   .board .tile, .board {
     transition: all .2s cubic-bezier(1, 0, 0, 1)
   }
 
-  .board .tile:hover {
-    cursor: pointer;
-  }
-
-  .board .tile:hover rect {
-    fill: #475bca;
-  }
-
   @media all and (max-width: 768px) {
     .board-wrapper {
-      padding: 4rem 2rem 2rem;
+      padding: 1rem;
     }
+  }
+
+  @media (pointer: fine) {
+    .board .tile:hover {
+      cursor: pointer;
+    }
+    
+    .board .tile:hover rect {
+      fill: #475bca;
+    }   
+  }
+
+  @media (pointer: coarse) {
+    .board .tile:active rect {
+      fill: #475bca;
+    } 
   }
 </style>

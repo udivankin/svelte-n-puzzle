@@ -22,7 +22,7 @@
   <audio src="build/win.ogg" bind:this={audio} />
   <div class="congrats-controls">
     <a
-      href="# "
+      href="#"
       alt="Play again!"
       on:click={() => updateState('updateSize', rows, cols)}
     >

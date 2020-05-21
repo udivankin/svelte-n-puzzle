@@ -47,21 +47,20 @@
 <style>
   .controls {
     display: flex;
-    padding-top: 1rem;
-    position: absolute;
-    top: 0;
-    opacity: .7;
-    width: 100%;
+    flex: 0 0 auto;
     font-size: 1.125rem;
+    margin-top: 1rem;
   }
 
   .controls > div {
     padding: 0 1rem;
+    display: inline-flex;
+    align-items: center;
   }
 
   .controls .rows-controls {
     flex: 1 0 auto;
-    text-align: right;
+    justify-content: flex-end;
     padding-left: 4rem;
   }
 
