@@ -60,7 +60,7 @@
 
 <style>
   .board-wrapper {
-    height: calc(100% - 4rem);
+    height: calc(100% - 6rem);
     padding: 2rem;
   }
 
@@ -77,7 +77,7 @@
   }
 
   .board .tile, .board {
-    transition: all .2s cubic-bezier(1, 0, 0, 1)
+    transition: all .15s cubic-bezier(1, 0, 0, 1)
   }
 
   @media all and (max-width: 768px) {

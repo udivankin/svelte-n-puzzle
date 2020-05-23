@@ -9,19 +9,26 @@
     move,
     shuffleBoard
   } from "./helpers.js";
+  import Stats from "./Stats.svelte";
+
+  let moveId = 0;
+  let gameId = Symbol('gameId');
 
   export let tiles = shuffleBoard(generateTiles(4, 4));
-
   export let updateState = (action, ...params) => {
     switch (action) {
       case "move": {
         const [tile] = params;
-        tiles = move(tiles, tile);
+        let count = 0;
+        [tiles, count] = move(tiles, tile);
+        moveId += count;
         break;
       }
       case "updateSize": {
         const [rows, cols] = params;
         tiles = shuffleBoard(generateTiles(rows, cols));
+        moveId = 0;
+        gameId = Symbol('gameId');
         break;
       }
       default:
@@ -41,6 +48,7 @@
   {:else}
     <Controls {tiles} />
     <Board {tiles} />
+    <Stats {moveId} {gameId} />
   {/if}
 </main>
 

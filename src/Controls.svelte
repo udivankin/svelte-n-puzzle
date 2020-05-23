@@ -48,9 +48,9 @@
 <style>
   .controls {
     display: flex;
-    flex: 0 0 auto;
+    flex: 0 0 4rem;
     font-size: 1.125rem;
-    margin-top: 1rem;
+    padding-top: 1rem;
   }
 
   .controls > div {
