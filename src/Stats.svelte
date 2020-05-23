@@ -38,7 +38,7 @@
 
 <style>
   .stats {
-    flex: 0 0 4rem;
+    flex: 0 0 2rem;
     font-size: 1.125rem;
     text-align: center;
   }
